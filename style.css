@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+.underline-text {
+    text-decoration: underline;
+}
+
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    margin-top: 0;
+    position: relative;
+}
+
+.main {
+    position: relative;
+    background-color: white;
+    width: 60%;
+    padding-left: 3%;
+    padding-bottom: 5%;
+    padding-top: 1em;
+    padding-right: 3%;
+    top: 10px;
+    margin: 20px auto 20px auto; /*top, right, bottom, left*/
+    min-height: 100px;
+    z-index: 2;
+}
+
+.main p {
+    color: black;
+    text-align: left;
+    font-size: 24px;
+    padding-top: 1px;
+}
+
+.main h1 {
+    font-size: 45px;
+}
+
+:root {
+    --avatar-max-width: 20%;
+}
+
+.logo {
+    max-width: calc(var(--avatar-max-width) /5);
+    padding-right: 1em;
+}
+
+.avatar {
+    float:left;
+    max-width: var(--avatar-max-width);
+    height:auto;
+    padding-right: 3em;
+}
+
+.skills {
+    margin-top: calc(var(--avatar-max-width) - 100px); /*change position based on image size*/
+}
+
+.languages {
+    max-width: 100px;
+    max-height: 70px;
+    margin: 10px;
+}
+
+/* adjust sizes according to width */
+@media (max-width: 1000px) {
+    .avatar {
+        max-width: 40%;
+    }
+
+    .languages {
+        max-width: 70px;
+        max-height: 50px;
+    }
+
+}
+
+
+
+/*** Snow animation ***/
+
+.animated-snow {
+    position: fixed;
+    margin-top: 0;
+    top: -20vh;
+    left: 0;
+    height: 200vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.snow {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 5rem;
+    padding: 1rem;
+    animation: falling 2s linear forwards infinite;
+    transform: translateY(-100vh);
+}
+
+.snow::before {
+    content: '.';
+}
+
+@keyframes falling {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(200vh);
+    }
+}
